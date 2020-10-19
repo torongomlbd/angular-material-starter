@@ -11,17 +11,17 @@ jobs:
           - v1-dependencies-{{ checksum "package-lock.json" }}
           - v1-dependencies-
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: npm install
       - save_cache:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
       - run:
-          name: test
+          name: Test
           command:  npm run test-prod
       - run:
-          name: build
+          name: Build
           command: |
             if [ $CIRCLE_BRANCH = 'master' ]; then
               npm run build-prod
