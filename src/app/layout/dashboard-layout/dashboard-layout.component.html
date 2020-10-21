@@ -1,0 +1,23 @@
+<div class="root-container">
+  <mat-toolbar color="primary" class="main-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Dashboard</h1>
+    <span class="example-spacer"></span>
+    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu> -->
+  </mat-toolbar>
+  <mat-sidenav-container  class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" class="sidenav">
+      Sidenav 
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
