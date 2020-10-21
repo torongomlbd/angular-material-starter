@@ -1,23 +1,28 @@
-<div class="root-container">
+<div class="dashboard-container">
   <mat-toolbar color="primary" class="main-toolbar">
     <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Dashboard</h1>
+    <a routerLink="/" style="color: #fff;">Home</a>
     <span class="example-spacer"></span>
-    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
-    </mat-menu> -->
+    </mat-menu>
   </mat-toolbar>
   <mat-sidenav-container  class="sidenav-container">
     <mat-sidenav #sidenav mode="side" class="sidenav">
-      Sidenav 
+      <mat-list>
+        <mat-list-item> Pepper </mat-list-item>
+        <mat-list-item> Salt </mat-list-item>
+        <mat-list-item> Paprika </mat-list-item>
+      </mat-list>
     </mat-sidenav>
   
     <mat-sidenav-content>
+      <div class="main-content">
+        <h1>Dashboard</h1>
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
-  <div class="main-content">
-    <router-outlet></router-outlet>
-  </div>
 </div>
