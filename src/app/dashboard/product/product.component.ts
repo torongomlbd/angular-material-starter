@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
 
   user: any;
   userId: any;
+  photo: any;
 
   constructor(
     private service: DashboardService,
@@ -23,6 +24,9 @@ export class ProductComponent implements OnInit {
     this.service.getUser(this.userId).subscribe(res => {
       this.user = res;
     })
+    this.service.getPhoto(this.userId).subscribe(res => {
+      this.photo = res;
+    });
   }
 
 }

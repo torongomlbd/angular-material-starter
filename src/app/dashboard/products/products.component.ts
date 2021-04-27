@@ -10,6 +10,8 @@ export class ProductsComponent implements OnInit {
 
   users = [];
 
+  photos = [];
+
   userDetails: any;
 
   constructor(
@@ -20,5 +22,9 @@ export class ProductsComponent implements OnInit {
     this.service.getUserList().subscribe(res => {
       this.users = res;
     });
+    this.service.getPhotos().subscribe(res => {
+      this.photos = res;
+    });
+    
   }
 }

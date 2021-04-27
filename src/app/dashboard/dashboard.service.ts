@@ -19,7 +19,11 @@ export class DashboardService {
     return this.http.get(`https://jsonplaceholder.typicode.com/users/${id}`);
   }
 
-  createUser(data): Observable<any> {
-    return this.http.post('https://jsonplaceholder.typicode.com/users', data);
+  getPhotos(): Observable<any> {
+    return this.http.get(`https://jsonplaceholder.typicode.com/photos`);
+  }
+
+  getPhoto(id): Observable<any> {
+    return this.http.get(`https://jsonplaceholder.typicode.com/photos/${id}`);
   }
 }

@@ -8,6 +8,7 @@
         <mat-card-subtitle>{{ user.username }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
+        <img mat-card-image [src]="photos[user.id].url" alt="dsad">
         <h4>{{ user.name }}</h4>
         <p>{{ user.email }}</p>
         <p>{{ user.company.name }}</p>
