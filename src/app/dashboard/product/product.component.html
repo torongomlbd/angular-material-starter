@@ -5,7 +5,7 @@
     <mat-card-subtitle>{{ user.username }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <img mat-card-image *ngIf="photo" [src]="photo.url" alt="image">
+    <img mat-card-image *ngIf="photo" [src]="photo?.url" alt="image">
     <h4>{{ user.name }}</h4>
     <p>{{ user.email }}</p>
     <p>{{ user.company.name }}</p>
