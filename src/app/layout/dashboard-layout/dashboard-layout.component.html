@@ -1,7 +1,10 @@
 <div class="dashboard-container">
   <mat-toolbar color="primary" class="main-toolbar">
-    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-    <a routerLink="/" style="color: #fff;">Home</a>
+    <button mat-icon-button (click)="show = !show"><mat-icon>menu</mat-icon></button>
+   
+    <mat-nav-list>
+      <a routerLink="/" style="color: #fff;">Home</a>
+    </mat-nav-list>
     <span class="example-spacer"></span>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
@@ -10,17 +13,14 @@
     </mat-menu>
   </mat-toolbar>
   <mat-sidenav-container  class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" class="sidenav">
-      <mat-list>
-        <mat-list-item> Pepper </mat-list-item>
-        <mat-list-item> Salt </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
-      </mat-list>
+    <mat-sidenav #sidenav mode="side" class="sidenav" [opened]="show">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="'products'" routerLinkActive="active">Products</a>
+      </mat-nav-list>
     </mat-sidenav>
   
     <mat-sidenav-content>
       <div class="main-content">
-        <h1>Dashboard</h1>
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>

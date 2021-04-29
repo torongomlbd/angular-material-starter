@@ -7,10 +7,6 @@ import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'products'
-  },
-  {
     path: 'products',
     component : ProductsComponent
   },
